@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title Conditionals in Pug
+    body
+        h2 My Web Application
+        - let user = { name: "Mayorwa", loggedIn: false, lastLogin: 6, color: 'jttf'}
+        if user.loggedIn
+            p
+                |Welcome Back,
+                strong #{ user.name }
+        else
+            case user.color
+                when 'red'
+                    a(class='button button-'+ user.color +'' href='/login') Log In To Your Account
+                when 'blue'
+                    a(class='button button-blue' href='/login') Log In To Your Account
+                when 'yellow'
+                    a(class='button button-warning' href='/login') Log In To Your Account
+                default
+                    a I don't know what to do
